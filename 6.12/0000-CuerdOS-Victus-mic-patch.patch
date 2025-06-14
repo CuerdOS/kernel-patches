@@ -1,0 +1,16 @@
+diff -uprN linux-6.12.33-orig/sound/soc/amd/yc/acp6x-mach.c linux-6.12.33/sound/soc/amd/yc/acp6x-mach.c
+--- linux-6.12.33-orig/sound/soc/amd/yc/acp6x-mach.c	2025-06-10 13:13:00.000000000 +0200
++++ linux-6.12.33/sound/soc/amd/yc/acp6x-mach.c	2025-06-14 17:03:43.442536220 +0200
+@@ -500,6 +500,12 @@ static const struct dmi_system_id yc_acp
+ 			DMI_MATCH(DMI_PRODUCT_NAME, "OMEN by HP Gaming Laptop 16z-n000"),
+ 		}
+ 	},
++		.driver_data = &acp6x_card,
++		.matches = {
++			DMI_MATCH(DMI_BOARD_VENDOR, "HP"),
++			DMI_MATCH(DMI_PRODUCT_NAME, "Victus by HP Laptop 16-e1xxx"),
++		}
++	},
+ 	{
+ 		.driver_data = &acp6x_card,
+ 		.matches = {
